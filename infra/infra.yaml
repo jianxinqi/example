@@ -1,0 +1,16 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: infra-kust
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: repos
+  interval: 5m
+  retryInterval: 30s
+  sourceRef:
+    kind: GitRepository
+    name: infra-repo
+    namespace: flux-system
+  path: ./
+  prune: true
