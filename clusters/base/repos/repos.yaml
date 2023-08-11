@@ -13,4 +13,3 @@ spec:
     name: flux-system
   path: ./repos
   prune: true
-  validation: client
